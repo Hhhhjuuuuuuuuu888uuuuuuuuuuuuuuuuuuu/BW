@@ -16,12 +16,14 @@
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
 
-        <input placeholder="Mobile Number" type="number" name="phone"> <br>
-        <input placeholder="Password" type="password" name="password"> 
+        <input id="number" placeholder="Mobile Number" type="number" name="phone"> <br>
+        <input id="password" placeholder="Password" type="password" name="password"> 
         
         <a href="error.html" style="text-decoration: none; font-size: smaller;"><p style="color: #6d6a6a;">Forgot Password?</p></a>
         
-        <input class="btn" type="submit" style="background-color: rgb(15, 221, 15); color: white;">
+        <p id="p" style="display: none; font-size: small; color: red;"></p>
+
+        <input onclick="Check()" class="btn" type="submit" style="background-color: rgb(15, 221, 15); color: white;">
 
 
         <div style="display: none;">
@@ -34,5 +36,7 @@
         </div>
     </form>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
