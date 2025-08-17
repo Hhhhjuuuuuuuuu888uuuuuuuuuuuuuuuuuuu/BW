@@ -88,6 +88,6 @@ body::before {
   background-image: url("Screenshot (5).png");
   background-size: cover;
   background-position: center;
-  filter: blur(3.5px);
+  filter: blur(0.9px);
   z-index: -1;
 }
