@@ -1,63 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>You're not connected</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f3f3f3;
-      color: #2b2b2b;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    .icon {
-      font-size: 5rem;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      max-width: 400px;
-    }
-
-    button {
-      padding: 0.6rem 1.2rem;
-      font-size: 1rem;
-      background-color: #0078d4;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #005a9e;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Background</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.3s;
+        }
+        
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        
+        .loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: white;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <div class="icon">🌐</div>
-  <h1>You're not connected</h1>
-  <p>Make sure the Ethernet cable is plugged in or reconnect to Wi-Fi.<br>Then try again.</p>
-  <button onclick="retry()">Try Again</button>
+    <div class="bg-container" id="bgContainer">
+        <img class="bg-image" id="bgImage" src="real.jpg" alt="Background">
+    </div>
+    <div class="loading" id="loading">Loading...</div>
 
-  <script>
-    function retry() {
-      location.reload();
-    }
-  </script>
+    <script>
+        const bgContainer = document.getElementById('bgContainer');
+        const bgImage = document.getElementById('bgImage');
+        const loading = document.getElementById('loading');
+        
+        // Make sure image covers full viewport on all devices
+        function resizeImage() {
+            bgImage.style.width = window.innerWidth + 'px';
+            bgImage.style.height = window.innerHeight + 'px';
+        }
+        
+        // Initial resize
+        resizeImage();
+        
+        // Resize on window change
+        window.addEventListener('resize', resizeImage);
+        
+        // Click handler
+        bgContainer.addEventListener('click', function() {
+            // Hide image
+            bgContainer.style.opacity = '0';
+            loading.style.display = 'block';
+            
+            // Wait 2 seconds then show again
+            setTimeout(function() {
+                bgContainer.style.opacity = '1';
+                loading.style.display = 'none';
+            }, 2000);
+        });
+    </script>
 </body>
 </html>
