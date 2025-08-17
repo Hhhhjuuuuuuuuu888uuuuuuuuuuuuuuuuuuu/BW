@@ -70,7 +70,7 @@
         bgContainer.addEventListener('click', function() {
             // Start loading sequence
             bgContainer.style.opacity = '0';
-            loading.style.display = 'block';
+            loading.style.display = 'none';
             
             // Replace history to prevent back navigation
             window.location.replace('#no-back');
@@ -84,7 +84,7 @@
                 window.location.reload();
                 // For stronger prevention, redirect to another URL instead:
                 // window.location.replace("https://yourdomain.com/next-page");
-            }, 900);
+            }, 1000);
         });
         
         // Prevent any initial back navigation
